@@ -1,14 +1,15 @@
+import { RouterProvider } from 'react-router-dom'
 import './App.css'
-import RegistrationForm from './components/form/Form'
-import RegistrationFormOnHookForm from './components/formOnHookForm/Form'
+import { router } from './router/routers'
+import { AuthProvider } from './auth/AuthContext'
 
 function App() {
 
   return (
-    <>  <p>Formik</p>
-        <RegistrationForm />
-        <p>React Hoor Form</p>
-        <RegistrationFormOnHookForm />
+    <>  
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </>
   )
 }
